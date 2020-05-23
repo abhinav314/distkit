@@ -1,4 +1,4 @@
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import math
 from distkit.general import *
 
@@ -79,10 +79,10 @@ class Gaussian(Distribution):
         Returns:
             None """
 
-    plt.hist(self.data)
-    plt.set_title('Histogram of Data')
-    plt.set_xlabel('Data')
-    plt.set_ylabel('Frequency')
+        plt.hist(self.data)
+        plt.set_title('Histogram of Data')
+        plt.set_xlabel('Data')
+        plt.set_ylabel('Frequency')
 
     def pdf(self, x):
         """Probability density function calculator for the gaussian distribution.
@@ -162,4 +162,4 @@ class Gaussian(Distribution):
         Returns:
             string: characteristics of the Gaussian """
 
-        return "mean {}, standard deviation {}".format(self.mean, self.stdev)
+        return "mean {}, standard deviation {}".format(self.mean, self.std)

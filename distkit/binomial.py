@@ -9,7 +9,7 @@ class Binomial(Distribution):
 
     Attributes:
         mean (float) representing the mean value of the distribution
-        stdev (float) representing the standard deviation of the distribution
+        std (float) representing the standard deviation of the distribution
         data_list (list of floats) a list of floats to be extracted from the data file
         p (float) representing the probability of an event occurring
         n (int) number of trials """
@@ -19,7 +19,7 @@ class Binomial(Distribution):
         self.n = size
         self.p = prob
 
-        Distribution.__init__(self, self.calculate_mean(), self.calculate_stdev())
+        Distribution.__init__(self, self.calculate_mean(), self.calculate_std())
 
     def calculate_mean(self):
 
@@ -43,9 +43,9 @@ class Binomial(Distribution):
         Returns:
             float: standard deviation of the data set """
 
-        self.stdev = math.sqrt(self.n * self.p * (1 - self.p))
+        self.std = math.sqrt(self.n * self.p * (1 - self.p))
 
-        return self.stdev
+        return self.std
 
     def replace_stats_with_data(self):
 
@@ -60,7 +60,7 @@ class Binomial(Distribution):
         self.n = len(self.data)
         self.p = 1.0 * sum(self.data) / len(self.data)
         self.mean = self.calculate_mean()
-        self.stdev = self.calculate_stdev()
+        self.std = self.calculate_stdev()
 
         return self.p, self.n
 
@@ -151,4 +151,4 @@ class Binomial(Distribution):
             string: characteristics of the Gaussian """
 
         return "mean {}, standard deviation {}, p {}, n {}". \
-            format(self.mean, self.stdev, self.p, self.n)
+            format(self.mean, self.std, self.p, self.n)

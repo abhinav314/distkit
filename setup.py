@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='distkit',
-      version='0.2',
+      version='1.2',
       description='Gaussian and Binomial distributions',
       packages=['distkit'],
       author='Abhinav Chanda',
