@@ -19,7 +19,7 @@ class Binomial(Distribution):
         self.n = size
         self.p = prob
 
-        Distribution.__init__(self, self.calculate_mean(), self.calculate_std())
+        Distribution.__init__(self, self.calculate_mean(), self.calculate_stdev())
 
     def calculate_mean(self):
 

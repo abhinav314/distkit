@@ -9,3 +9,4 @@ distkit.egg-info/SOURCES.txt
 distkit.egg-info/dependency_links.txt
 distkit.egg-info/not-zip-safe
 distkit.egg-info/top_level.txt
+test/test.py
